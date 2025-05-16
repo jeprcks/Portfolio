@@ -11,9 +11,6 @@ class UrlHelper {
       );
       
       // Create a hidden anchor element to open the URL
-      final anchorElement = html.AnchorElement(href: url)
-        ..target = '_blank'
-        ..click();
     } catch (e) {
       debugPrint('Error opening URL: $e');
       // Show error to user

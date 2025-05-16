@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import '../utils/url_helper.dart';
 
 class ContactPage extends StatefulWidget {
-  const ContactPage({Key? key}) : super(key: key);
+  const ContactPage({super.key});
 
   @override
-  _ContactPageState createState() => _ContactPageState();
+  ContactPageState createState() => ContactPageState();
 }
 
-class _ContactPageState extends State<ContactPage> {
+class ContactPageState extends State<ContactPage> {
   @override
   void dispose() {
     super.dispose();

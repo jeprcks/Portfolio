@@ -1,8 +1,10 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import '../utils/url_helper.dart';
 
 class ProjectsPage extends StatelessWidget {
-  const ProjectsPage({Key? key}) : super(key: key);
+  const ProjectsPage({super.key});
 
   void _launchURL(BuildContext context, String urlString) {
     // Use our custom URL helper that works reliably on web
@@ -129,108 +131,6 @@ class ProjectsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectList() {
-    final List<Map<String, dynamic>> recentProjects = [
-      {
-        'title': 'Weather Forecast App',
-        'description': 'A mobile app that provides accurate weather forecasts using OpenWeatherMap API.',
-        'tech': ['Flutter', 'Dart', 'REST API'],
-        'date': 'April 2025',
-      },
-      {
-        'title': 'E-commerce Platform',
-        'description': 'A full-stack e-commerce solution with product management, cart, and payment processing.',
-        'tech': ['React', 'Node.js', 'MongoDB'],
-        'date': 'March 2025',
-      },
-      {
-        'title': 'Task Management System',
-        'description': 'A collaborative task management tool with real-time updates and notifications.',
-        'tech': ['Flutter', 'Firebase', 'Cloud Functions'],
-        'date': 'February 2025',
-      },
-      {
-        'title': 'Portfolio Website',
-        'description': 'A responsive portfolio website showcasing projects and skills.',
-        'tech': ['HTML/CSS', 'JavaScript', 'Bootstrap'],
-        'date': 'January 2025',
-      },
-    ];
-
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: recentProjects.length,
-      itemBuilder: (context, index) {
-        final project = recentProjects[index];
-        return Container(
-          margin: const EdgeInsets.only(bottom: 15),
-          padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            color: Colors.blueGrey[800]!.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    project['title'],
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Text(
-                    project['date'],
-                    style: const TextStyle(
-                      color: Colors.white70,
-                      fontSize: 14,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              Text(
-                project['description'],
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: (project['tech'] as List<String>).map((tech) {
-                  return Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 5,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      tech,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-                    ),
-                  );
-                }).toList(),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
 
   void _showProjectDetails(
     BuildContext context,
@@ -381,30 +281,4 @@ class ProjectsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildProjectGallery() {
-    return SizedBox(
-      height: 200,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return Container(
-            width: 300,
-            margin: const EdgeInsets.only(right: 15),
-            decoration: BoxDecoration(
-              color: Colors.blueGrey[800],
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Center(
-              child: Icon(
-                Icons.image,
-                size: 50,
-                color: Colors.grey[600],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
 }
