@@ -1,7 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class SkillsPage extends StatelessWidget {
-  const SkillsPage({Key? key}) : super(key: key);
+  const SkillsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
